@@ -1,4 +1,4 @@
 GCC = gcc
 
-main: main.c
+main: main.c 
 	$(GCC) $^ -g -lm -o $@

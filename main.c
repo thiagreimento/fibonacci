@@ -1,22 +1,21 @@
 #include <stdio.h>
+#include "fib.h"
+
+unsigned int fib(unsigned int n){
+
+  if(n == 1 || n == 0)
+    return 1;
+  return fib(n-1) + fib(n-2);
+}
 
 int main(){
 
-  int n_menos_1  = 1,n_menos_2 = 1, i = 1, n;
-  for(i=1;i<=10;i++){
+  printf("Escolha o i-esimo termo da sequencia de fibonacci:\n");
+  unsigned int n;
+  scanf("%d",&n);
 
-    //printf("n_menos_1 = %d\t",n_menos_1);
-    //printf("n_menos 2 = %d\t",n_menos_2);
-
-    n  = n_menos_1 + n_menos_2;
-
-    //printf("n = %d\t",n);
-
-    n_menos_2 = n_menos_1;
-    n_menos_1 = n;
-    printf("%dº termo: %d\n",i+2,n);
-
-  }
+  int fibn = fib(n-1);
+  printf("O %d-esimo termo da sequencia de fibonacci eh: %d\n",n, fibn);
 
   return 0;
 }
